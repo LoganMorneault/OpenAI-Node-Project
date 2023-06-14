@@ -50,6 +50,7 @@ const apiRequest = async (req, res) => {
 
 // Summarizes a Wikipedia article. 
 // Request body should be a JSON object with key "url", representing the url of the article to be summarized.
+// Returns a JSON object with key "Summary", representing the summary of the article as returned by GPT.
 const wikipediaSummary = async (req: Request, res: Response) => {
     const url: string = req.body["url"];
 
