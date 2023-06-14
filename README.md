@@ -14,4 +14,6 @@ You may need to install node or tsc.
 
 ## To Do:
 
-Refactor to use LangChain.js
+- Refactor to use LangChain.js
+- System for prompt storage.
+  - Formatting/interpolation can be done with LangChain.
