@@ -14,4 +14,4 @@ You may need to install node or tsc.
 
 ## To Do:
 
-Refactor to use LangChain.
+Refactor to use LangChain.js
