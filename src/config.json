@@ -5,6 +5,6 @@
         "DEFAULT_TEMPERATURE": 0.0,
         "DEFAULT_MAX_TOKENS": null,
         "API_URL": "https://api.openai.com/v1/chat/completions",
-        "API_SECRET_KEY": "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"
+        "API_SECRET_KEY": "your api key here"
     }
 }
