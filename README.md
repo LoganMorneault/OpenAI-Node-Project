@@ -12,8 +12,24 @@ To run the Node server, run `npm start`.
 
 You may need to install node or tsc.
 
-## To Do:
+## Project Structure
 
-- Refactor to use LangChain.js
-- System for prompt storage.
-  - Formatting/interpolation can be done with LangChain.
+This project uses a model/controller structure.
+
+```txt
+|- app.ts (entrypoint)
+|- Controllers
+|  |- Classes that provide some specific functionality
+|- Data
+|  |- Sample data. Currently just prompts, might be replaced with a DB service.
+|- Models
+|  |- Classes to be used by other classes
+|- Services
+|  |- Classes that provide some functionality to be used by multiple other classes.
+```
+
+## To Do
+
+- Database service?
+- More controllers for different use cases
+  - LangChain Agents might be an interesting pathway here.

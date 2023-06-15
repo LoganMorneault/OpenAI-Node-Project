@@ -1,0 +1,7 @@
+[
+    {
+        "prompt_name": "wikipedia_summary",
+        "prompt_text": "You will be provided with hyperlinks to wikipedia articles. The hyperlinks will be delimited with {delimiter} characters. \nYou are an assistant that extracts information from wikipedia articles to educate laymen users. From the provided wikipedia article, extract key points. Use only the provided article to inform your response. \nFormat your response as a valid and well-formed JSON object with 'Summary' as the key. \n{delimiter}{article_link}{delimiter}",
+        "input_variables": ["delimiter", "article_link"]
+    }
+]

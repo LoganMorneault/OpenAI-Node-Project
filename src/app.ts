@@ -1,25 +1,34 @@
 import express from 'express';
-import cors from 'cors';
 import config from "./config.json"
 
-import { Application, application } from 'express';
-import OpenAiController from './controllers/openai-controller';
+import { Application } from 'express';
+import { WikipediaController } from './controllers/wikipedia-controller';
+import { OpenAIService } from './services/openai-service';
+import { TestController } from './controllers/test-controller';
+import { ConfigService } from './services/config-service';
+import { PromptService } from './services/prompt-service';
 
 
 const app: Application = express();
-
 app.use(express.json());
-app.use(cors());
 
 
-// A controller is actually a function that consumes the app and adds endpoints.
-OpenAiController(app);
+// Instantiate services
+const configService: ConfigService = new ConfigService();
+const promptService: PromptService = new PromptService();
+const openAiService: OpenAIService = new OpenAIService(configService);
 
-// Listen on provided port.
+
+// Allows for querying Wikipedia
+const wikipediaController = new WikipediaController(openAiService, promptService)
+wikipediaController.attach(app);
+
+// Miscellaneous
+const testController = new TestController();
+testController.attach(app);
+
+
+// Start app.
 app.listen(config["PORT_NUMBER"], () => {
-    console.log(`Express is now listening on port ${config["PORT_NUMBER"]}`);
+    console.log(`Express is now listening on port ${config["PORT_NUMBER"]}.\n`);
 })
-
-
-
-
